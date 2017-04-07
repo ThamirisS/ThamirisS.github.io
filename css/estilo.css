@@ -26,9 +26,8 @@
     padding: 1em;
     overflow: hidden;
    }
-
-<body>
- <body background="https://www.walldevil.com/wallpapers/a72/best-south-korea-romantic-cityscape-illustration.jpg" bgproperties="fixed">
-</body>
-
+   
+   body {
+  background-image:"https://www.walldevil.com/wallpapers/a72/best-south-korea-romantic-cityscape-illustration.jpg" bgproperties="fixed">
+  }
    
