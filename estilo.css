@@ -1,7 +1,4 @@
-<html>
-<head>
-  <title>Thamiris Silva</title>
-  <style>
+
    header, footer {
     padding:1em;
      color: #EEB4B4;
@@ -29,21 +26,4 @@
     padding: 1em;
     overflow: hidden;
    }
-   </style>
- </head>
- <header><center><h1>?</h1></center></header>
-<body>
- 
- <body background="https://www.walldevil.com/wallpapers/a72/best-south-korea-romantic-cityscape-illustration.jpg" bgproperties="fixed">
- 
-<nav>
- <ul class="nav">
-  <li class="nav"><a href="index">Sobre Mim</a></li>
-  <li class="nav"><a href="portifolio">Portifolio</a></li>
-  <li class="nav"><a href="Habilidades">Habilidades</a></li>
-  <li class="nav"><a href="contato">Contato</a></li>
-  </ul>
-</nav>
-  <footer><center>Spring Day ©Thamiris</center></footer> 
- </body>
- </html>
+   
