@@ -2,23 +2,37 @@
 <html>
 <head>
   <title>Jogo da Velha</title>
+  <script>
+    var jogador = 'x';
+    function jogo(id){
+      var src = img(id);
+      if (src == "branco.png"){
+        document.getElementById(id).src = "img/" + jogador + ".png";
+      }
+    }
+    function img(id){
+      var src = document.getElementById(id).src;
+      return = src.substring(src.lenght - 10, src.lenght);
+    }
+      
+  </script>
 </head>
 <body bgcolor="black">
 <table align="center" border="0" cellspacing="5">
  <tr>
- <td><img src="branco.png" width="200px"></td> 
- <td><img src="branco.png" width="200px"></td>
- <td><img src="branco.png" width="200px"></td>
+ <td><img src="branco.png" width="200px" id="casa1" onclick="jogo(this.id)"></td> 
+ <td><img src="branco.png" width="200px" id="casa2" onclick="jogo(this.id)"></td>
+ <td><img src="branco.png" width="200px" id="casa3" onclick="jogo(this.id)"></td>
  </tr>
  <tr>
- <td><img src="branco.png" width="200px"></td>
- <td><img src="branco.png" width="200px"></td>
- <td><img src="branco.png" width="200px"></td>
+ <td><img src="branco.png" width="200px" id="casa4" onclick="jogo(this.id)"></td>
+ <td><img src="branco.png" width="200px" id="casa5" onclick="jogo(this.id)"></td>
+ <td><img src="branco.png" width="200px" id="casa6" onclick="jogo(this.id)"></td>
  </tr>
  <tr>
- <td><img src="branco.png" width="200px"></td>
- <td><img src="branco.png" width="200px"></td>
- <td><img src="branco.png" width="200px"></td>
+ <td><img src="branco.png" width="200px" id="casa7" onclick="jogo(this.id)"></td>
+ <td><img src="branco.png" width="200px" id="casa8" onclick="jogo(this.id)"></td>
+ <td><img src="branco.png" width="200px" id="casa9" onclick="jogo(this.id)"></td>
  </tr>
  </table>
 </body>
