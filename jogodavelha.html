@@ -8,6 +8,11 @@
       var src = img(id);
       if (src == "branco.png"){
         document.getElementById(id).src = "img/" + jogador + ".png";
+        if (jogador == 'x') {
+          jogador = 'o';
+        } else {
+          jogador ='x';
+        }   
       }
     }
     function img(id){
