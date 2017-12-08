@@ -8,26 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-  <script>
-    
-    var jogador = 'x';
-    function jogo(id){
-      var src = img(id);
-      if (src == "branco.png"){
-        document.getElementById(id).src = "img/" + jogador + ".png";
-        if (jogador == 'x') {
-          jogador = 'o';
-        } else {
-          jogador = 'x';
-        }   
-      }
-    }
-    function img(id){
-      var src = document.getElementById(id).src;
-      return src.substring(src.length - 10, src.length);
-    }
-      
-  </script>
+ 
   <style>
     .body {
       background-color:black;
