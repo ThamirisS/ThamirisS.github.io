@@ -3,8 +3,8 @@
 <head>
   <title>Jogo da Velha</title>
   <script>
-  var jogador1 = "x";
-  var jogador2 = "o";
+  const jogador1 = "x";
+  const jogador2 = "o";
   var fim = false;
   var vez = jogador1;
   function jogo() {
@@ -12,13 +12,13 @@
   	for (var i = 0; i < casa.length; i++) {
     	casa[i].addEventListener("click", function(){
         	if (fim) {return;}
-            	if (this.getElementByTagName("img").length == 0){
+            	if (this.getElementsByTagName("img").length == 0){
             	if (vez == jogador1) {
-                	this.innerHTML = "<img src='x.png'>";
+                	this.innerHTML = "<img src='https://thamiriss.github.io/o.png'>";
                     this.setAttribute("jogada", jogador1);
                     vez = jogador2;
                 } else {
-                	this.innerHTML = "<img src='o.png'>";
+                	this.innerHTML = "<img src='https://thamiriss.github.io/x.png'>";
                     this.setAttribute("jogada", jogador2);
                     vez = jogador1;
                     }
