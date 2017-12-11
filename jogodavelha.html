@@ -1,61 +1,160 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <title>Jogo da Velha</title>
   <script>
   const jogador1 = "x";
   const jogador2 = "o";
+  var aux = 0;
   var fim = false;
-  var vez = jogador1;
-  function jogo() {
-  	var casa = document.get.ElementsByClassName("casa");
-  	for (var i = 0; i < casa.length; i++) {
-    	casa[i].addEventListener("click", function(){
-        	if (fim) {return;}
-            	if (this.getElementsByTagName("img").length == 0){
-            	  if (vez == jogador1) {
-                	this.innerHTML = "<img src='https://thamiriss.github.io/o.png' width="70px">";
-                    this.setAttribute("jogada", jogador1);
-                    vez = jogador2;
-                  alert("<img src='https://thamiriss.github.io/o.png' width="70px">")
+
+  function jogo(x) {
+    
+    if(document.getElementById(x).innerHTML >= 1 || document.getElementById(x) <= 9){
+      aux++;
+      if(aux%2 == 0){
+        document.getElementById(x).innerHTML = '<img class="img" src="https://joaoantoniosc.github.io/programas/marcacao_1.png" width="75%">'
+        document.getElementById(x).title = 'x'
+      } else {
+        document.getElementById(x).innerHTML = '<img src="http://www.mundoanimal.blog.br/wp-content/uploads/2015/08/Cao-Bolinha-2.jpg"width="100%">'
+        document.getElementById(x).title = 'o'
+      }
+      
+      ganhou()
+      
+    }
+    
+  }
+    
+    function ganhou(){
+      
+      var ganhador = '';
+      
+      //X
+      if((document.getElementById('c1').title == 'x' &&
+      document.getElementById('c2').title == 'x') &&
+      document.getElementById('c3').title == 'x'){
+        ganhador = 'X'
+      } else {
+        if((document.getElementById('c1').title == 'x' &&
+        document.getElementById('c4').title == 'x') &&
+        document.getElementById('c7').title == 'x') {
+          ganhador = 'X'
+        } else {
+          if((document.getElementById('c1').title == 'x' &&
+          document.getElementById('c5').title == 'x') &&
+          document.getElementById('c9').title == 'x') {
+            ganhador = 'X'
+          } else {
+            if((document.getElementById('c2').title == 'x' &&
+            document.getElementById('c5').title == 'x') &&
+            document.getElementById('c8').title == 'x') {
+              ganhador = 'X'
+            } else {
+              if((document.getElementById('c3').title == 'x' &&
+              document.getElementById('c6').title == 'x') &&
+              document.getElementById('c9').title == 'x') {
+                ganhador = 'X'
+              } else {
+                if((document.getElementById('c4').title == 'x' &&
+                document.getElementById('c5').title == 'x') &&
+                document.getElementById('c6').title == 'x') {
+                  ganhador = 'X'
                 } else {
-                	  this.innerHTML = "<img src='https://thamiriss.github.io/x.png' width="70px">";
-                    this.setAttribute("jogada", jogador2);
-                    vez = jogador1;
+                  if((document.getElementById('c7').title == 'x' &&
+                  document.getElementById('c8').title == 'x') &&
+                  document.getElementById('c9').title == 'x') {
+                    ganhador = 'X'
+                  } else {
+                    if((document.getElementById('c7').title == 'x' &&
+                    document.getElementById('c5').title == 'x') &&
+                    document.getElementById('c3').title == 'x') {
+                      ganhador = 'X'
                   }
                 }
+              }
             }
-        );
+          } 
+        }
+        
+        
+        //O
+        if((document.getElementById('c1').title == 'o' &&
+        document.getElementById('c2').title == 'o') &&
+        document.getElementById('c3').title == 'o'){
+          ganhador = 'O'
+        } else {
+          if((document.getElementById('c1').title == 'o' &&
+          document.getElementById('c4').title == 'o') &&
+          document.getElementById('c7').title == 'o') {
+            ganhador = 'O'
+          } else {
+            if((document.getElementById('c1').title == 'o' &&
+            document.getElementById('c5').title == 'o') &&
+            document.getElementById('c9').title == 'o') {
+              ganhador = 'O'
+            } else {
+              if((document.getElementById('c2').title == 'o' &&
+              document.getElementById('c5').title == 'o') &&
+              document.getElementById('c8').title == 'o') {
+                ganhador = 'O'
+              } else {
+                if((document.getElementById('c3').title == 'o' &&
+                document.getElementById('c6').title == 'o') &&
+                document.getElementById('c9').title == 'o') {
+                  ganhador = 'O'
+                } else {
+                  if((document.getElementById('c4').title == 'o' &&
+                  document.getElementById('c5').title == 'o') &&
+                  document.getElementById('c6').title == 'o') {
+                    ganhador = 'O'
+                  } else {
+                    if((document.getElementById('c7').title == 'o' &&
+                    document.getElementById('c8').title == 'o') &&
+                    document.getElementById('c9').title == 'o') {
+                      ganhador = 'O'
+                    } else {
+                      if((document.getElementById('c7').title == 'o' &&
+                      document.getElementById('c5').title == 'o') &&
+                      document.getElementById('c3').title == 'o') {
+                        ganhador = 'O'
+                      }
+                    }
+                  }
+                }
+              }
+            } 
+          }
+        }
+      }
+        
+      }
+      
+      
+    
+    	if(ganhador != ''){
+    	  alert(ganhador + ' GANHOU')
+    	  document.getElementById('c1').disabled = true;
+    	  document.getElementById('c2').disabled = true;
+    	  document.getElementById('c3').disabled = true;
+    	  document.getElementById('c4').disabled = true;
+    	  document.getElementById('c5').disabled = true;
+    	  document.getElementById('c6').disabled = true;
+    	  document.getElementById('c7').disabled = true;
+    	  document.getElementById('c8').disabled = true;
+    	  document.getElementById('c9').disabled = true;
+    	} else {
+    	  if(aux == 9){
+    	    alert('VELHA')
+    	  }
+    	}
+      
     }
- 
- 	 async function vencer(){
-    var c1 = document.getElementById("c1").getAttribute("jogada");
-  	var c2 = document.getElementById("c2").getAttribute("jogada");
-    var c3 = document.getElementById("c3").getAttribute("jogada");
-    var c4 = document.getElementById("c4").getAttribute("jogada");
-    var c5 = document.getElementById("c5").getAttribute("jogada");
-    var c6 = document.getElementById("c6").getAttribute("jogada");
-    var c7 = document.getElementById("c7").getAttribute("jogada");
-    var c8 = document.getElementById("c8").getAttribute("jogada");
-    var c9 = document.getElementById("c9").getAttribute("jogada");
-    var vencedor = "";
-    if ((c1 == c4 && c1 == c7 && c1 != "") || (c1 == c2 && c1 == c3 && c1 != "") || (c1 == c5 && c1 == c9 && c1 != "")) {
-   		vencedor = c1;
-      }else ((c5 == c4 && c5 == c6 && c5 != "") || (c5 == c2 && c5 == c8 && c5 != "") || (c5 == c3 && c5 == c7 && c5 != "")) {
-    	vencedor = c5;
-       } else if (((c9 == c8 && c9 == c7) || (c9 == c3 && c9 == c6 )) && c9 != "") {
-       	  vencedor = c9;
-       }
-       if (vencedor != "") {
-       fim = true;
-       await sleep(50);
-       alert("O ganhador é:" + vencedor);
-       }
-    }
-    function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-    }   
-  }
+  
   </script>
   <style>
     body {
@@ -75,21 +174,76 @@
      float:left;
     }
     
+    .botrigh{
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+      border-top: 0;
+      border-left: 0;
+      border-radius: 0px;
+      height: 100px;
+      width: 100%;
+      color: white;
+     }
+     
+      .botrigh:hover{
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+      border-top: 0;
+      border-left: 0;
+      border-radius: 0px;
+      height: 100px;
+      width: 100%;
+      color: transparent!important;
+     }
+
+    .botbaixo{
+      border-bottom: 1px solid black;
+      border-right: 0;
+      border-radius: 0px;
+      height: 100px;
+      width: 100%;
+      border-top: 0;
+      border-left: 0;
+      color: white;
+    }
+
+    .pass{
+      display: inline-block;
+      padding: 0;     
+    }
+
+    .quadrado{
+      width: 400px;
+      height: 400px;
+      float: center!important;
+    }
+
   </style>
 </head>
 <body>
 <center><h1>Jogo da Velha</h1></center>
-  <div class="table">
-  	<div class="casa" id="c1" jogada="" onclick="jogo"></div>
-    <div class="casa" id="c2" jogada="" onclick="jogo"></div>
-    <div class="casa" id="c3" jogada="" onclick="jogo"></div>
-    <div class="casa" id="c4" jogada="" onclick="jogo"></div>
-    <div class="casa" id="c5" jogada="" onclick="jogo"></div>
-    <div class="casa" id="c6" jogada="" onclick="jogo"></div>
-    <div class="casa" id="c7" jogada="" onclick="jogo"></div>
-    <div class="casa" id="c8" jogada="" onclick="jogo"></div>
-    <div class="casa" id="c9" jogada="" onclick="jogo"></div>
-  
+
+  <div class="container">
+ <center><div class="quadrado">
+  <div class="row">
+  <div class="col-xs-4 pass">
+    <button class="btn btn-default botrigh btn-block" id="c1"  onclick="jogo(this.id)">1</button> 
+    <button class="btn btn-default botrigh btn-block" id="c2"  onclick="jogo(this.id)">2</button> 
+    <button class="btn btn-default botrigh btn-block" id="c3"  onclick="jogo(this.id)">3</button>
+    </div>
+    <div class="col-xs-4 pass">
+    <button class="btn btn-default botrigh btn-block" id="c4"  onclick="jogo(this.id)">4</button> 
+    <button class="btn btn-default botrigh btn-block" id="c5" onclick="jogo(this.id)">5</button> 
+    <button class="btn btn-default botrigh btn-block" id="c6" onclick="jogo(this.id)">6</button> 
+    </div>
+    <div class="col-xs-4 pass">
+    <button  class="btn btn-default botbaixo btn-block" id="c7"  onclick="jogo(this.id)">7</button> 
+    <button class="btn btn-default botbaixo btn-block" id="c8"  onclick="jogo(this.id)">8</button> 
+    <button class="btn btn-default botbaixo btn-block" id="c9"  onclick="jogo(this.id)">9</button> 
   </div>
+</div>
+</div>
+</center>
+</div>
 </body>
 </html>
