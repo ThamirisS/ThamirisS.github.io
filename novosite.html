@@ -293,7 +293,7 @@
       <p>Thamiris__xx</p>
     </div>
     <div class="col-sm-4">
-      <a href="#" data-toggle="tooltip" title="Infelizmente não é possível linkar com o meu perfil, mas se escrever meu nome no aplicativo aparece, não deixe de me seguir lá!"><img src="https://cdn.worldvectorlogo.com/logos/snapchat.svg" width="100" height="100"></a>
+      <a href="https://www.snapchat.com/add/thamirisssss/"><img src="https://cdn.worldvectorlogo.com/logos/snapchat.svg" width="100" height="100"></a>
       <h4>SNAPCHAT</h4>
       <p>Thamiris__xx</p>
     </div>
@@ -372,25 +372,7 @@
     <div class="col-sm-5">
       <p>O <a href="http://serra.ifes.edu.br/">IFES</a> é onde eu passo a maior parte do dia.</p>
       <p><span class="glyphicon glyphicon-map-marker"></span> Espírito Santo, Brasil</p>
-      <p><span class="glyphicon glyphicon-phone"></span>(31) 999099013 </p>
       <p><span class="glyphicon glyphicon-envelope"></span> thamirismais@gmail.com</p>
-    </div>
-    <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-		<input type="hidden" name="recipient" value="">
-          <input class="form-control" id="name" name="name" placeholder="Nome" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comentário" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Enviar</button>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -410,10 +392,8 @@ $(document).ready(function(){
     if (this.hash !== "") {
       // Prevent default anchor click behavior
       event.preventDefault();
-
       // Store hash
       var hash = this.hash;
-
       // Using jQuery's animate() method to add smooth page scroll
       // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
       $('html, body').animate({
@@ -429,7 +409,6 @@ $(document).ready(function(){
   $(window).scroll(function() {
     $(".slideanim").each(function(){
       var pos = $(this).offset().top;
-
       var winTop = $(window).scrollTop();
         if (pos < winTop + 600) {
           $(this).addClass("slide");
@@ -441,4 +420,3 @@ $(document).ready(function(){
 
 </body>
 </html>
-
