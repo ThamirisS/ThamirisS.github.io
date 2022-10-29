@@ -1,2 +1,2 @@
 # ThamirisS.github.io
-Eu gosto de batata frita 
+Aprendendo a programar... 
